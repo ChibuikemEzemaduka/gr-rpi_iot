@@ -207,7 +207,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include <gnuradio/make_block_sptr.h>
+#include <memory>
 #include "BPSK_Decoder_cb_impl.h"
 
 namespace gr {
@@ -216,7 +216,7 @@ namespace gr {
     BPSK_Decoder_cb::sptr
     BPSK_Decoder_cb::make()
     {
-      return gnuradio::make_block_sptr<BPSK_Decoder_cb_impl>();
+      return std::make_shared<BPSK_Decoder_cb_impl>();
     }
 
     /*
