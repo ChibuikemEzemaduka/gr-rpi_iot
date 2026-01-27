@@ -45,7 +45,7 @@ foreach(incdir ${GNURADIO_RUNTIME_INCLUDE_DIRS})
 endforeach(incdir)
 
 set(GR_SWIG_LIBRARIES gnuradio-rpi_iot)
-set(GR_SWIG_DOC_FILE ${CMAKE_CURRENT_BINARY_DIR}/rpi_iot_swig_doc.i)
+#set(GR_SWIG_DOC_FILE ${CMAKE_CURRENT_BINARY_DIR}/rpi_iot_swig_doc.i)
 set(GR_SWIG_DOC_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 GR_SWIG_MAKE(rpi_iot_swig rpi_iot_swig.i)
@@ -61,6 +61,6 @@ GR_SWIG_INSTALL(TARGETS rpi_iot_swig DESTINATION ${GR_PYTHON_DIR}/rpi_iot)
 install(
     FILES
     rpi_iot_swig.i
-    ${CMAKE_CURRENT_BINARY_DIR}/rpi_iot_swig_doc.i
+    #${CMAKE_CURRENT_BINARY_DIR}/rpi_iot_swig_doc.i
     DESTINATION ${GR_INCLUDE_DIR}/rpi_iot/swig
 )
