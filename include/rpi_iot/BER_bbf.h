@@ -208,6 +208,7 @@
 
 #include <rpi_iot/api.h>
 #include <gnuradio/block.h>
+#include <memory>
 
 namespace gr {
   namespace rpi_iot {
