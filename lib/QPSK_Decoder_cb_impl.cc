@@ -207,7 +207,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include <gnuradio/make_block_sptr.h>
+#include <memory>
 #include "QPSK_Decoder_cb_impl.h"
 
 namespace gr {
@@ -216,7 +216,7 @@ namespace gr {
     QPSK_Decoder_cb::sptr
     QPSK_Decoder_cb::make()
     {
-      return gnuradio::make_block_sptr<QPSK_Decoder_cb_impl>();
+      return std::make_shared<QPSK_Decoder_cb_impl>();
     }
 
     /*
