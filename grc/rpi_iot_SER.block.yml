@@ -1,0 +1,20 @@
+id: rpi_iot_SER
+label: SER
+category: '[Rpi_iot]'
+templates:
+  imports: from gnuradio import rpi_iot
+  make: rpi_iot.SER(${window_size})
+parameters:
+- id: window_size
+  label: Window_size
+  dtype: raw
+inputs:
+- label: in
+  domain: stream
+  dtype: byte
+  multiplicity: '2'
+outputs:
+- label: out
+  domain: stream
+  dtype: float
+file_format: 1

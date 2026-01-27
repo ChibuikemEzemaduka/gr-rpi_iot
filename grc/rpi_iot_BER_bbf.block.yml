@@ -1,0 +1,23 @@
+id: rpi_iot_BER_bbf
+label: BER bbf
+category: '[Rpi_iot]'
+templates:
+  imports: from gnuradio import rpi_iot
+  make: rpi_iot.BER_bbf(${window_size}, ${bps})
+parameters:
+- id: window_size
+  label: Window_size
+  dtype: raw
+- id: bps
+  label: Bps
+  dtype: byte
+inputs:
+- label: in
+  domain: stream
+  dtype: byte
+  multiplicity: '2'
+outputs:
+- label: out
+  domain: stream
+  dtype: float
+file_format: 1

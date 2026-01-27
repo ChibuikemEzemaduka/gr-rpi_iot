@@ -22,5 +22,9 @@ install(FILES
     rpi_iot_SER.xml
     rpi_iot_BER_bbf.xml
     rpi_iot_QPSK_Decoder_cb.xml
-    rpi_iot_BPSK_Decoder_cb.xml DESTINATION share/gnuradio/grc/blocks
+    rpi_iot_BPSK_Decoder_cb.xml
+    rpi_iot_SER.block.yml
+    rpi_iot_BER_bbf.block.yml
+    rpi_iot_BPSK_Decoder_cb.block.yml
+    rpi_iot_QPSK_Decoder_cb.block.yml DESTINATION share/gnuradio/grc/blocks
 )
