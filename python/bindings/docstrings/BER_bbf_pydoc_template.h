@@ -16,12 +16,12 @@
 
 
  
- static const char *__doc_gr_rpi_iot_SER = R"doc()doc";
+ static const char *__doc_gr_rpi_iot_BER_bbf = R"doc()doc";
 
 
- static const char *__doc_gr_rpi_iot_SER_SER = R"doc()doc";
+ static const char *__doc_gr_rpi_iot_BER_bbf_BER_bbf = R"doc()doc";
 
 
- static const char *__doc_gr_rpi_iot_SER_make = R"doc()doc";
+ static const char *__doc_gr_rpi_iot_BER_bbf_make = R"doc()doc";
 
   
