@@ -208,6 +208,7 @@
 
 #include <rpi_iot/api.h>
 #include <gnuradio/block.h>
+#include <memory>
 
 namespace gr {
   namespace rpi_iot {
@@ -220,7 +221,7 @@ namespace gr {
     class RPI_IOT_API BPSK_Decoder_cb : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<BPSK_Decoder_cb> sptr;
+      using sptr = std::shared_ptr<BPSK_Decoder_cb>;
 
       /*!
        * \brief Return a shared_ptr to a new instance of rpi_iot::BPSK_Decoder_cb.
