@@ -23,7 +23,9 @@
 #endif
 
 #include <gnuradio/io_signature.h>
+#include <gnuradio/make_block_sptr.h>
 #include "SER_impl.h"
+
 
 namespace gr {
   namespace rpi_iot {
@@ -31,8 +33,7 @@ namespace gr {
     SER::sptr
     SER::make(long window_size)
     {
-      return gnuradio::get_initial_sptr
-        (new SER_impl(window_size));
+      return gnuradio::make_block_sptr<SER_impl>(window_size);        
     }
 
     /*
