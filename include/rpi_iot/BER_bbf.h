@@ -220,7 +220,7 @@ namespace gr {
     class RPI_IOT_API BER_bbf : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<BER_bbf> sptr;
+      using sptr = std::shared_ptr<BER_bbf>;
 
       /*!
        * \brief Return a shared_ptr to a new instance of rpi_iot::BER_bbf.
