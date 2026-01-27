@@ -19,6 +19,7 @@ cd gr-rpi_iot
 mkdir build
 cd build
 cmake .. \
+  -DENABLE_TESTING=OFF
   -DPYTHON_EXECUTABLE=/usr/bin/python3 \
   -DPYTHON_INCLUDE_DIR=/usr/include/python3.10 \
   -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.10.so
