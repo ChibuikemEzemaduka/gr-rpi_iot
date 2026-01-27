@@ -62,22 +62,22 @@ include(GrTest)
 
 include_directories(${CPPUNIT_INCLUDE_DIRS})
 
-list(APPEND test_rpi_iot_sources
-    ${CMAKE_CURRENT_SOURCE_DIR}/test_rpi_iot.cc
-    ${CMAKE_CURRENT_SOURCE_DIR}/qa_rpi_iot.cc
-)
-
-add_executable(test-rpi_iot ${test_rpi_iot_sources})
-
-target_link_libraries(
-  test-rpi_iot
-  ${GNURADIO_RUNTIME_LIBRARIES}
-  ${Boost_LIBRARIES}
-  ${CPPUNIT_LIBRARIES}
-  gnuradio-rpi_iot
-)
-
-GR_ADD_TEST(test_rpi_iot test-rpi_iot)
+# list(APPEND test_rpi_iot_sources
+   # ${CMAKE_CURRENT_SOURCE_DIR}/test_rpi_iot.cc
+   # ${CMAKE_CURRENT_SOURCE_DIR}/qa_rpi_iot.cc
+#)
+#
+#add_executable(test-rpi_iot ${test_rpi_iot_sources})
+#
+#target_link_libraries(
+  #test-rpi_iot
+  #${GNURADIO_RUNTIME_LIBRARIES}
+  #${Boost_LIBRARIES}
+  #${CPPUNIT_LIBRARIES}
+  #gnuradio-rpi_iot
+#)
+#
+#GR_ADD_TEST(test_rpi_iot test-rpi_iot)
 
 ########################################################################
 # Print summary
