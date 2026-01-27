@@ -23,7 +23,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include <gnuradio/make_block_sptr.h>
+#include <memory>
 #include "SER_impl.h"
 
 
@@ -33,7 +33,7 @@ namespace gr {
     SER::sptr
     SER::make(long window_size)
     {
-      return gnuradio::make_block_sptr<SER_impl>(window_size);        
+      return std::make_shared<SER_impl>(window_size);        
     }
 
     /*
