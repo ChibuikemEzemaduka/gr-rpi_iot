@@ -37,11 +37,11 @@ if(PYTHON_EXECUTABLE)
 else(PYTHON_EXECUTABLE)
 
     #use the built-in find script
-    find_package(PythonInterp 2)
+    find_package(PythonInterp 3)
 
     #and if that fails use the find program routine
     if(NOT PYTHONINTERP_FOUND)
-        find_program(PYTHON_EXECUTABLE NAMES python python2 python2.7 python2.6 python2.5)
+        find_program(PYTHON_EXECUTABLE NAMES python3 python)
         if(PYTHON_EXECUTABLE)
             set(PYTHONINTERP_FOUND TRUE)
         endif(PYTHON_EXECUTABLE)
@@ -87,8 +87,10 @@ macro(GR_PYTHON_CHECK_MODULE desc mod cmd have)
 try:
     import ${mod}
     assert ${cmd}
-except ImportError, AssertionError: exit(-1)
-except: pass
+except (ImportError, AssertionError): 
+    raise SystemExit(-1)
+except Exception:
+    pass
 #########################################"
         RESULT_VARIABLE ${have}
     )
@@ -107,7 +109,7 @@ endmacro(GR_PYTHON_CHECK_MODULE)
 if(NOT DEFINED GR_PYTHON_DIR)
 execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "
 from distutils import sysconfig
-print sysconfig.get_python_lib(plat_specific=True, prefix='')
+print(sysconfig.get_python_lib(plat_specific=True, prefix=''))
 " OUTPUT_VARIABLE GR_PYTHON_DIR OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 endif()
@@ -120,8 +122,9 @@ file(TO_CMAKE_PATH ${GR_PYTHON_DIR} GR_PYTHON_DIR)
 function(GR_UNIQUE_TARGET desc)
     file(RELATIVE_PATH reldir ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
     execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "import re, hashlib
-unique = hashlib.md5('${reldir}${ARGN}').hexdigest()[:5]
-print(re.sub('\\W', '_', '${desc} ${reldir} ' + unique))"
+s = '${reldir}${ARGN}'.encode('utf-8')
+unique = hashlib.md5(s).hexdigest()[:5]
+print(re.sub(r'\\W', '_', '${desc} ${reldir} ' + unique))"
     OUTPUT_VARIABLE _target OUTPUT_STRIP_TRAILING_WHITESPACE)
     add_custom_target(${_target} ALL DEPENDS ${ARGN})
 endfunction(GR_UNIQUE_TARGET)
@@ -236,7 +239,8 @@ endfunction(GR_PYTHON_INSTALL)
 file(WRITE ${CMAKE_BINARY_DIR}/python_compile_helper.py "
 import sys, py_compile
 files = sys.argv[1:]
-srcs, gens = files[:len(files)/2], files[len(files)/2:]
+mid = len(files)//2
+srcs, gens = files[:mid], files[mid:]
 for src, gen in zip(srcs, gens):
     py_compile.compile(file=src, cfile=gen, doraise=True)
 ")
