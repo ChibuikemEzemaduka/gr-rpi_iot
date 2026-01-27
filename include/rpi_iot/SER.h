@@ -24,6 +24,7 @@
 
 #include <rpi_iot/api.h>
 #include <gnuradio/block.h>
+#include <memory>
 
 namespace gr {
   namespace rpi_iot {
@@ -36,8 +37,7 @@ namespace gr {
     class RPI_IOT_API SER : virtual public gr::block
     {
      public:
-      typedef boost::shared_ptr<SER> sptr;
-
+      using sptr = std::shared_ptr<SER>;
       /*!
        * \brief Return a shared_ptr to a new instance of rpi_iot::SER.
        *
