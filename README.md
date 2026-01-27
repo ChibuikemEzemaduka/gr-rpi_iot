@@ -14,11 +14,11 @@ BER block takes in two byte streams and compute the ratio of bit error rate. Thi
 ## How to use?
 
 ``` bash
-git clone https://github.com/qizhu8/gr-rpi_iot.git
+git clone https://github.com/ChibuikemEzemaduka/gr-rpi_iot.git
 cd gr-rpi_iot
 mkdir build
 cd build
-cmake ..
+cmake .. -DPYTHON_EXECUTABLE=/usr/bin/python3
 make
 sudo make install
 sudo ldconfig
