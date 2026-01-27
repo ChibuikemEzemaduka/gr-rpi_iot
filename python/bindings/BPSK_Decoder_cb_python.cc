@@ -13,8 +13,8 @@
 /* If manual edits are made, the following tags should be modified accordingly.    */
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
-/* BINDTOOL_HEADER_FILE(SER.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(3695b50e1e6950604a8cb1ebb3f66d65)                     */
+/* BINDTOOL_HEADER_FILE(BPSK_Decoder_cb.h)                                        */
+/* BINDTOOL_HEADER_FILE_HASH(1598fdb04586ec9430dff511f46eddbc)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,22 +23,21 @@
 
 namespace py = pybind11;
 
-#include <rpi_iot/SER.h>
+#include <rpi_iot/BPSK_Decoder_cb.h>
 // pydoc.h is automatically generated in the build directory
-#include <SER_pydoc.h>
+#include <BPSK_Decoder_cb_pydoc.h>
 
-void bind_SER(py::module& m)
+void bind_BPSK_Decoder_cb(py::module& m)
 {
 
-    using SER    = ::gr::rpi_iot::SER;
+    using BPSK_Decoder_cb    = ::gr::rpi_iot::BPSK_Decoder_cb;
 
 
-    py::class_<SER, gr::block, gr::basic_block,
-        std::shared_ptr<SER>>(m, "SER", D(SER))
+    py::class_<BPSK_Decoder_cb, gr::block, gr::basic_block,
+        std::shared_ptr<BPSK_Decoder_cb>>(m, "BPSK_Decoder_cb", D(BPSK_Decoder_cb))
 
-        .def(py::init(&SER::make),
-           py::arg("window_size"),
-           D(SER,make)
+        .def(py::init(&BPSK_Decoder_cb::make),
+           D(BPSK_Decoder_cb,make)
         )
         
 

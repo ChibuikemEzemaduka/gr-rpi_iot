@@ -13,8 +13,8 @@
 /* If manual edits are made, the following tags should be modified accordingly.    */
 /* BINDTOOL_GEN_AUTOMATIC(0)                                                       */
 /* BINDTOOL_USE_PYGCCXML(0)                                                        */
-/* BINDTOOL_HEADER_FILE(SER.h)                                        */
-/* BINDTOOL_HEADER_FILE_HASH(3695b50e1e6950604a8cb1ebb3f66d65)                     */
+/* BINDTOOL_HEADER_FILE(BER_bbf.h)                                        */
+/* BINDTOOL_HEADER_FILE_HASH(735e0c24a3da61f838eab506425eba8e)                     */
 /***********************************************************************************/
 
 #include <pybind11/complex.h>
@@ -23,22 +23,23 @@
 
 namespace py = pybind11;
 
-#include <rpi_iot/SER.h>
+#include <rpi_iot/BER_bbf.h>
 // pydoc.h is automatically generated in the build directory
-#include <SER_pydoc.h>
+#include <BER_bbf_pydoc.h>
 
-void bind_SER(py::module& m)
+void bind_BER_bbf(py::module& m)
 {
 
-    using SER    = ::gr::rpi_iot::SER;
+    using BER_bbf    = ::gr::rpi_iot::BER_bbf;
 
 
-    py::class_<SER, gr::block, gr::basic_block,
-        std::shared_ptr<SER>>(m, "SER", D(SER))
+    py::class_<BER_bbf, gr::block, gr::basic_block,
+        std::shared_ptr<BER_bbf>>(m, "BER_bbf", D(BER_bbf))
 
-        .def(py::init(&SER::make),
+        .def(py::init(&BER_bbf::make),
            py::arg("window_size"),
-           D(SER,make)
+           py::arg("bps"),
+           D(BER_bbf,make)
         )
         
 
