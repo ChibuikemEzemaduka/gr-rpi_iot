@@ -207,6 +207,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
+#include <gnuradio/make_block_sptr.h>
 #include "BER_bbf_impl.h"
 
 namespace gr {
@@ -215,8 +216,7 @@ namespace gr {
     BER_bbf::sptr
     BER_bbf::make(long window_size, unsigned char bps)
     {
-      return gnuradio::get_initial_sptr
-        (new BER_bbf_impl(window_size, bps));
+      return gnuradio::make_block_sptr<BER_bbf_impl>(window_size, bps);
     }
 
     /*
