@@ -22,6 +22,8 @@ cmake .. -DENABLE_TESTING=OFF -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCL
 make
 sudo make install
 sudo ldconfig
+sudo mkdir /usr/local/lib/python3/dist-packages/gnuradio
+sudo cp -a /usr/local/lib/python3/dist-packages/rpi_iot /usr/local/lib/python3/dist-packages/gnuradio
 ```
 
 Open gnuradio-companion or click the "refresh" button on the top-right corner. If everthing is correct, you should find the following blocks in section rpi_iot
