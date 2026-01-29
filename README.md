@@ -18,12 +18,11 @@ git clone https://github.com/ChibuikemEzemaduka/gr-rpi_iot.git
 cd gr-rpi_iot
 mkdir build
 cd build
-cmake .. -DENABLE_TESTING=OFF -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.10 -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.10.so
+cmake .. -DENABLE_TESTING=OFF -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.10 -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.10.so -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
 sudo ldconfig
-sudo mkdir /usr/local/lib/python3/dist-packages/gnuradio
-sudo cp -a /usr/local/lib/python3/dist-packages/rpi_iot /usr/local/lib/python3/dist-packages/gnuradio
+sudo cp -a /usr/lib/python3/dist-packages/rpi_iot /usr/lib/python3/dist-packages/gnuradio
 ```
 
 Open gnuradio-companion or click the "refresh" button on the top-right corner. If everthing is correct, you should find the following blocks in section rpi_iot
