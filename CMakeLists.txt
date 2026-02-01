@@ -142,6 +142,24 @@ find_package(Doxygen)
 # API compatible version required.
 set(GR_REQUIRED_COMPONENTS RUNTIME)
 find_package(Gnuradio "3.7.2" REQUIRED)
+find_package(PkgConfig REQUIRED)
+
+
+pkg_check_modules(GR_RUNTIME REQUIRED gnuradio-runtime)
+# Some distros don't ship a separate gnuradio-pmt.pc; PMT comes with runtime.
+pkg_check_modules(GR_PMT QUIET gnuradio-pmt)
+
+include_directories(${GR_RUNTIME_INCLUDE_DIRS} )
+link_directories(${GR_RUNTIME_LIBRARY_DIRS} )
+
+if(GR_PMT_FOUND)
+  include_directories(${GR_PMT_INCLUDE_DIRS})
+  link_directories(${GR_PMT_LIBRARY_DIRS})
+  message(STATUS "Found gnuradio-pmt via pkg-config")
+else()
+  message(STATUS "No gnuradio-pmt.pc found; assuming PMT is provided by gnuradio-runtime")
+endif()
+
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake/Modules)
 include(GrVersion)
 
