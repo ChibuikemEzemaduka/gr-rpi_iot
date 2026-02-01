@@ -32,9 +32,10 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    DESTINATION ${GR_PYTHON_DIR}/rpi_iot
+    DESTINATION ${GR_PYTHON_DIR}/gnuradio/rpi_iot
 )
 
+add_subdirectory(bindings)
 ########################################################################
 # Handle the unit tests
 ########################################################################

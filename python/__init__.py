@@ -22,13 +22,17 @@
 This is the GNU Radio RPI_IOT module. Place your Python package
 description here (python/__init__.py).
 '''
-
+from gnuradio import gr
 # import swig generated symbols into the rpi_iot namespace
 try:
 	# this might fail if the module is python-only
 	from rpi_iot_swig import *
 except ImportError:
 	pass
+	
+
+from .rpi_iot_python import *
+
 
 # import any pure python here
 #
