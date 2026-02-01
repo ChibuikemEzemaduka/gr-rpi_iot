@@ -1,6 +1,6 @@
 id: rpi_iot_BER_bbf
 label: BER bbf
-category: '[rpi_iot]'
+category: '[Rpi_iot]'
 templates:
   imports: from gnuradio import rpi_iot
   make: rpi_iot.BER_bbf(int(${window_size}), int(${bit_per_symbol}))
