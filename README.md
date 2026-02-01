@@ -1,6 +1,6 @@
 # gr-rpi_iot
 
-This is the repository storing all the OOT modules designed for RPI ECSE 4964/6964 Physical Layer lab. It is forked from https://github.com/qizhu8/gr-rpi_iot; however, the build and make scripts have been modified to compile with python3 rather than puthon 2, and to work with newer Gnuradio versions like 3.10.1
+This is the repository storing all the OOT modules designed for the RPI ECSE 4660/6660 (IOT) Physical Layer lab. It is forked from https://github.com/qizhu8/gr-rpi_iot; however, the build scripts have been rewritten to compile for Ubuntu22.04+Gnuradio 3.10.1+python3 rather than for Ubuntu18+Gnuradio3.7+python2
 
 ## What is in this repository?
 
