@@ -39,8 +39,17 @@ if(NOT rpi_iot_sources)
 	return()
 endif(NOT rpi_iot_sources)
 
+
 add_library(gnuradio-rpi_iot SHARED ${rpi_iot_sources})
-target_link_libraries(gnuradio-rpi_iot ${Boost_LIBRARIES} ${GNURADIO_ALL_LIBRARIES})
+target_link_libraries(gnuradio-rpi_iot
+  ${Boost_LIBRARIES}
+  ${GR_RUNTIME_LIBRARIES}
+)
+
+if(GR_PMT_FOUND)
+  target_link_libraries(gnuradio-rpi_iot ${GR_PMT_LIBRARIES})
+endif()
+
 set_target_properties(gnuradio-rpi_iot PROPERTIES DEFINE_SYMBOL "gnuradio_rpi_iot_EXPORTS")
 
 if(APPLE)
