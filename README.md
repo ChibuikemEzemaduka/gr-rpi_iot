@@ -21,6 +21,7 @@ cmake .. -DENABLE_TESTING=OFF -DCMAKE_INSTALL_PREFIX=/usr
 make
 sudo make install
 sudo ldconfig
+sudo apt install xterm
 ```
 
 Open gnuradio-companion or click the "refresh" button on the top-right corner. If everthing is correct, you should find the following blocks in section rpi_iot
