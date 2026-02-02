@@ -3,7 +3,7 @@
  
 ## This branch has been modified from the master branch to compile for Ubuntu24.04+Gnuradio 3.10.9.2
 
-Please read the "How to use" section on the master branch to get better details of this repo.
+Please read the "How to use" section on the master branch to get better details of this repo. Check out the how to use below if you just want to compile using this branch
 
 
 ## How to use?
