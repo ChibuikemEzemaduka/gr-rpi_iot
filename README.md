@@ -1,19 +1,18 @@
 # gr-rpi_iot
 
-This is the repository storing all the OOT modules designed for the RPI ECSE 4660/6660 (IOT) Physical Layer lab. It is forked from https://github.com/qizhu8/gr-rpi_iot; however, the build scripts have been rewritten to compile for Ubuntu22.04+Gnuradio 3.10.1+python3 rather than for Ubuntu18+Gnuradio3.7+python2
+ 
+## This branch has been modified from the master branch to compile for Ubuntu24.04+Gnuradio 3.10.9.2
 
-## What is in this repository?
+Please read the "How to use" section on the master branch to get better details of this repo.
 
-### BPSK and QPSK decoding block
-Two heuristic decoders implemented in OOT with C++. Use them as a ground truth block to check the correctness of your block.
-Note that, since we don't implement grey's code, this block works different from the gr-digit::constellation block.
-
-### BER block
-BER block takes in two byte streams and compute the ratio of bit error rate. This block only exams the most recent window\_size symbols.
 
 ## How to use?
 
 ``` bash
+sudo apt install cmake
+sudo snap install cmake --classic
+sudo apt-get install -y doxygen
+sudo apt-get install -y python3-setuptools
 git clone https://github.com/ChibuikemEzemaduka/gr-rpi_iot.git
 cd gr-rpi_iot
 mkdir build
