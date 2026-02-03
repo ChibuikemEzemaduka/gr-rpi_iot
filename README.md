@@ -13,6 +13,7 @@ sudo apt install cmake
 sudo snap install cmake --classic
 sudo apt-get install -y doxygen
 sudo apt-get install -y python3-setuptools
+sudo apt install git
 git clone -b Ubuntu24.04+Gnu3.10.9.2 --single-branch https://github.com/ChibuikemEzemaduka/gr-rpi_iot.git
 cd gr-rpi_iot
 mkdir build
